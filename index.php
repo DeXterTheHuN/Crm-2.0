@@ -1,16 +1,19 @@
 <?php
 require_once 'config.php';
+require_once 'cache/CacheHelper.php';
 requireLogin();
 
 // Megyék lekérdezése ügyfélszámmal
-$stmt = $pdo->query("
-    SELECT c.*, COUNT(cl.id) as client_count
-    FROM counties c
-    LEFT JOIN clients cl ON c.id = cl.county_id AND cl.approved = 1 AND cl.closed_at IS NULL
-    GROUP BY c.id
-    ORDER BY c.name
-");
-$counties = $stmt->fetchAll();
+// Megyék lekérdezése
+$counties = $pdo->query("SELECT * FROM counties ORDER BY name")->fetchAll();
+
+// Települések lekérdezése (ha van kiválasztott megye)
+if (isset($_GET['county_id'])) {
+    $stmt = $pdo->prepare("SELECT * FROM settlements WHERE county_id = ?");
+    $stmt->execute([$_GET['county_id']]);
+    $settlements = $stmt->fetchAll();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="hu">

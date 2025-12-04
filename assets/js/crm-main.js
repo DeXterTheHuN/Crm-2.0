@@ -196,5 +196,15 @@ function escapeHtml(text) {
 // Inicializálás
 document.addEventListener('DOMContentLoaded', function() {
     checkNotifications();
-    setInterval(checkNotifications, 2000);
+if (typeof EventSource !== 'undefined') {
+    const evtSource = new EventSource('sse_notifications.php');
+    evtSource.onmessage = (e) => {
+        const data = JSON.parse(e.data);
+        updateNotificationBadge(data.count);
+    };
+} else {
+    setInterval(checkNotifications, 3000);
+}
+
+
 });

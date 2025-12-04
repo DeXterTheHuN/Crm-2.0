@@ -125,7 +125,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     loadMessages();
-    setInterval(loadMessages, 2000);
+if (typeof EventSource !== 'undefined') {
+    const evtSource = new EventSource('sse_notifications.php');
+    evtSource.onmessage = (e) => {
+        const data = JSON.parse(e.data);
+        updateNotificationBadge(data.count);
+    };
+} else {
+    setInterval(checkNotifications, 3000);
+}
+
 });
 
 // Oldalról való távozáskor jelöljük olvasottnak

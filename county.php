@@ -1,14 +1,28 @@
 <?php
 require_once 'config.php';
 require_once 'audit_helper.php';
+require_once 'cache/CacheHelper.php';
 requireLogin();
 
 $county_id = $_GET['id'] ?? 0;
 
-// Megye lekérdezése
-$stmt = $pdo->prepare("SELECT * FROM counties WHERE id = ?");
-$stmt->execute([$county_id]);
-$county = $stmt->fetch();
+// Megyék lekérdezése cache-ből
+$counties = CacheHelper::get('counties');
+if (!$counties) {
+    $stmt = $pdo->query("SELECT * FROM counties ORDER BY name");
+    $counties = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    CacheHelper::set('counties', $counties);
+}
+
+// Települések lekérdezése cache-ből (megye alapján)
+$cacheKey = 'settlements_' . $countyId;
+$settlements = CacheHelper::get($cacheKey);
+if (!$settlements) {
+    $stmt = $pdo->prepare("SELECT * FROM settlements WHERE county_id = ? ORDER BY name");
+    $stmt->execute([$countyId]);
+    $settlements = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    CacheHelper::set($cacheKey, $settlements);
+}
 
 if (!$county) {
     die('Megye nem található!');

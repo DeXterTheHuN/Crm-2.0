@@ -1,4 +1,6 @@
 <?php
+require_once 'error_handler.php';
+
 // Adatbázis konfiguráció
 // FONTOS: Módosítsd ezeket az értékeket a saját cPanel adatbázis adataidra!
 
