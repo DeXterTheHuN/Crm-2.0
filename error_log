@@ -1,0 +1,29 @@
+[29-Oct-2025 13:31:41 Europe/Budapest] PHP Fatal error:  Uncaught Error: Call to undefined function exec() in /home/szabolcs/padlascrm/get_user.php:8
+Stack trace:
+#0 /home/szabolcs/padlascrm/get_user.php(31): __getRunningUser()
+#1 {main}
+  thrown in /home/szabolcs/padlascrm/get_user.php on line 8
+[29-Oct-2025 13:31:41 Europe/Budapest] PHP Warning:  Constant PASSWORD_DEFAULT already defined in /home/szabolcs/padlascrm/update_pass.php on line 17
+[30-Oct-2025 20:44:24 Europe/Budapest] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`szabolcs_padlas_crm`.`clients`, CONSTRAINT `clients_ibfk_3` FOREIGN KEY (`agent_id`) REFERENCES `agents` (`id`) ON DELETE SET NULL) in /home/szabolcs/padlascrm/client_form.php:97
+Stack trace:
+#0 /home/szabolcs/padlascrm/client_form.php(97): PDOStatement->execute()
+#1 {main}
+  thrown in /home/szabolcs/padlascrm/client_form.php on line 97
+[30-Oct-2025 20:44:42 Europe/Budapest] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`szabolcs_padlas_crm`.`clients`, CONSTRAINT `clients_ibfk_2` FOREIGN KEY (`settlement_id`) REFERENCES `settlements` (`id`) ON DELETE SET NULL) in /home/szabolcs/padlascrm/client_form.php:97
+Stack trace:
+#0 /home/szabolcs/padlascrm/client_form.php(97): PDOStatement->execute()
+#1 {main}
+  thrown in /home/szabolcs/padlascrm/client_form.php on line 97
+[30-Oct-2025 20:45:59 Europe/Budapest] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`szabolcs_padlas_crm`.`clients`, CONSTRAINT `clients_ibfk_2` FOREIGN KEY (`settlement_id`) REFERENCES `settlements` (`id`) ON DELETE SET NULL) in /home/szabolcs/padlascrm/client_form.php:85
+Stack trace:
+#0 /home/szabolcs/padlascrm/client_form.php(85): PDOStatement->execute()
+#1 {main}
+  thrown in /home/szabolcs/padlascrm/client_form.php on line 85
+[31-Oct-2025 17:33:34 Europe/Budapest] PHP Parse error:  Unclosed '{' on line 69 in /home/szabolcs/padlascrm/client_form.php on line 485
+[31-Oct-2025 17:33:39 Europe/Budapest] PHP Parse error:  Unclosed '{' on line 69 in /home/szabolcs/padlascrm/client_form.php on line 485
+[31-Oct-2025 17:33:46 Europe/Budapest] PHP Parse error:  Unclosed '{' on line 69 in /home/szabolcs/padlascrm/client_form.php on line 485
+[03-Nov-2025 12:32:57 Europe/Budapest] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number in /home/szabolcs/padlascrm/client_form.php:127
+Stack trace:
+#0 /home/szabolcs/padlascrm/client_form.php(127): PDOStatement->execute()
+#1 {main}
+  thrown in /home/szabolcs/padlascrm/client_form.php on line 127

@@ -1,0 +1,32 @@
+# Padlás Fődem Szigetelés CRM - Apache konfiguráció
+
+# PHP beállítások
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# Alapértelmezett index fájl
+DirectoryIndex login.php index.php
+
+# Hibakezelés (éles környezetben kapcsold ki!)
+php_flag display_errors On
+php_flag display_startup_errors On
+
+# Karakterkódolás
+AddDefaultCharset UTF-8
+
+# MIME típusok
+AddType application/x-httpd-php .php
+
+# Biztonság - config.php védelem
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Biztonság - .git mappa védelem
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.git - [F,L]
+</IfModule>

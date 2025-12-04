@@ -1,0 +1,159 @@
+/* ===== JAVÍTOTT LÁTHATÓSÁG - GLOBÁLIS STÍLUSOK ===== */
+
+/* Űrlap mezők - erősebb keretekkel */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    border: 2px solid #6c757d !important; /* Sötétebb szürke keret */
+    border-radius: 6px !important;
+    padding: 10px 12px !important;
+    background-color: #ffffff !important;
+    transition: all 0.2s ease !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #0d6efd !important; /* Kék keret focus-nál */
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+    outline: none !important;
+}
+
+/* Címkék - vastagabb betű */
+label {
+    font-weight: 600 !important;
+    color: #212529 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Táblázatok - erősebb elválasztók */
+.table {
+    border: 2px solid #dee2e6 !important;
+}
+
+.table thead th {
+    background-color: #e9ecef !important;
+    border-bottom: 3px solid #adb5bd !important;
+    font-weight: 700 !important;
+    color: #212529 !important;
+    padding: 14px 12px !important;
+}
+
+.table tbody td {
+    border-bottom: 2px solid #dee2e6 !important;
+    padding: 14px 12px !important;
+    vertical-align: middle !important;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa !important;
+    cursor: pointer;
+}
+
+/* Kártyák - erősebb árnyék és keret */
+.card {
+    border: 2px solid #dee2e6 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 10px !important;
+}
+
+.card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.county-card {
+    border: 2px solid #dee2e6 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.county-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Gombok - erősebb megjelenítés */
+.btn {
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    border-width: 2px !important;
+    padding: 8px 16px !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Badge-ek - erősebb színek */
+.badge {
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Keresési panel - jobb elkülönítés */
+.card.mb-4 {
+    background-color: #ffffff !important;
+    border: 2px solid #dee2e6 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Form-control erősebb megjelenés */
+.form-control {
+    border: 2px solid #6c757d !important;
+}
+
+.form-control:focus {
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+}
+
+/* Form-select erősebb megjelenés */
+.form-select {
+    border: 2px solid #6c757d !important;
+}
+
+.form-select:focus {
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+}
+
+/* Táblázat responsive wrapper */
+.table-responsive {
+    border: 2px solid #dee2e6 !important;
+    border-radius: 8px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* Scrollbar mindig látható */
+.table-responsive::-webkit-scrollbar {
+    height: 12px !important;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 6px !important;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #888 !important;
+    border-radius: 6px !important;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}

@@ -1,0 +1,148 @@
+/* CRM Main Styles - index.php */
+
+body {
+    background: linear-gradient(135deg, #e3f2fd 0%, #e8eaf6 100%);
+    min-height: 100vh;
+}
+
+.notification-badge {
+    position: relative;
+}
+
+.notification-dot {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.notification-dot.chat {
+    background: #ffc107;
+}
+
+.notification-dot.patchnotes {
+    background: #28a745;
+}
+
+.county-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    background: white;
+}
+
+.county-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-color: #0d6efd;
+}
+
+.header {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Toast stílusok */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Mobilbarát stílusok */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .header h3 {
+        font-size: 1.1rem;
+    }
+
+    .header .d-flex {
+        gap: 0.5rem !important;
+    }
+
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+        font-size: 0.9rem;
+    }
+
+    .btn-sm {
+        min-height: 44px;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .county-card {
+        margin-bottom: 1rem;
+    }
+
+    .county-card .card-body {
+        padding: 1rem;
+    }
+
+    .county-card h5 {
+        font-size: 1rem;
+    }
+
+    .county-card .fs-4 {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 8px;
+        padding-right: 8px;
+        max-width: 100%;
+    }
+
+    .header .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .header h3 {
+        font-size: 1rem;
+    }
+
+    .btn-sm span {
+        font-size: 0.75rem;
+    }
+}
+
+/* Fektetett mód (landscape) */
+@media (max-width: 896px) and (orientation: landscape) {
+    .header {
+        padding: 0.5rem 0 !important;
+    }
+
+    .header h3 {
+        font-size: 1rem;
+    }
+
+    .btn-sm {
+        padding: 0.3rem 0.5rem;
+        min-height: 38px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .county-card .card-body {
+        padding: 0.75rem;
+    }
+}
